@@ -46,7 +46,8 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:name, :description)
+      params.require(:recipe).permit(:name, :description, ingredients_attributes: [:id, :name, :_destroy])
+                                                          #ingredients_arrtibutes is required for the cocoon nested form
     end
 
 end
