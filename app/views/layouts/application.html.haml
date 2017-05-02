@@ -14,5 +14,8 @@
           %li= link_to 'New Recipe', new_recipe_path
 
     .container
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "flash #{key}"
+
       =yield
 
